@@ -286,7 +286,7 @@ class PagesController(p.toolkit.BaseController):
         p.toolkit.c.pages_dict = p.toolkit.get_action('ckanext_pages_list')(
             data_dict=data_dict
         )
-        page = p.toolkit.request.params.get('page', 1)
+        page = p.toolkit.request.params.get('page', '1')
         if not page.isdigit():
             page = 1
         p.toolkit.c.page = helpers.Page(
